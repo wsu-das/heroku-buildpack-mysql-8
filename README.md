@@ -1,20 +1,20 @@
 # Heroku Buildpack MySQL 8
 
 This is a [Heroku buildpack](https://devcenter.heroku.com/articles/buildpacks) that installs and adds the `mysql` 
-and `mysqldump` binaries (v8.0) from the `mysql-client-core` deb package, which will be available in `$PATH` on 
+and `mysqldump` binaries (v8.4) from the `mysql-client-core` deb package, which will be available in `$PATH` on 
 your Dyno.
 
 ```
 $ mysql --version
-mysql  Ver 8.0.35-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
+mysql  Ver 8.4.11-0ubuntu0.24.04.1 for Linux on x86_64 ((Ubuntu))
 
 $ mysqldump --version
-mysqldump  Ver 8.0.35-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
+mysqldump  Ver 8.4.11-0ubuntu0.24.04.1 for Linux on x86_64 ((Ubuntu))
 ```
 
 ## Versions
 
-* MySQL: `8.0` for `heroku-22` or `heroku-20` stacks
+* MySQL: `8.4` for `heroku-24` stack
 
 > **Note:** it might have issues with different Heroku stack versions
 
@@ -22,7 +22,7 @@ mysqldump  Ver 8.0.35-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
 
 - via [Heroku CLI](https://devcenter.heroku.com/articles/buildpacks#using-a-third-party-buildpack):
    ```
-   $ heroku buildpacks:set stebogit/heroku-buildpack-mysql-8
+   $ heroku buildpacks:set wsu-das/heroku-buildpack-mysql-8
    ```
 
 - or from the dashboard of your project
@@ -32,7 +32,7 @@ mysqldump  Ver 8.0.35-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
 
 ```
 -----> MySQL Client app detected
------> MySQL Install mysql-client-core-8.0_8.0.35-0ubuntu0.22.04.1_amd64.deb
+-----> MySQL Install mysql-community-client-core_8.4.11-1ubuntu24.04_amd64.deb
 -----> MySQL set PATH
 -----> MySQL Done 🎉
 ```
